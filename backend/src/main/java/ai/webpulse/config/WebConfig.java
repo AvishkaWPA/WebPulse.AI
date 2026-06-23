@@ -22,8 +22,8 @@ public class WebConfig implements WebMvcConfigurer {
             origins = List.of("http://localhost:5173");
         }
         registry.addMapping("/api/**")
-                .allowedOrigins(origins.toArray(String[]::new))
-                .allowedMethods("GET", "POST")
+                .allowedOriginPatterns(origins.toArray(String[]::new))
+                .allowedMethods("GET", "POST", "OPTIONS")
                 .allowedHeaders("*");
     }
 }
