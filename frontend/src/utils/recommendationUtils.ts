@@ -5,7 +5,7 @@ export interface PriorityStyle {
   bg: string;
   text: string;
   icon: React.ReactNode;
-  tagColor: 'error' | 'warning' | 'default' | 'success';
+  tagColor: 'error' | 'warning' | 'default' | 'success' | 'blue';
 }
 
 export const getPriorityStyle = (priority: string): PriorityStyle => {
@@ -30,7 +30,7 @@ export const getPriorityStyle = (priority: string): PriorityStyle => {
     bg: 'bg-accent-light border-accent/10',
     text: 'text-accent',
     icon: React.createElement(ArrowDownOutlined, { className: 'text-accent font-bold' }),
-    tagColor: 'default',
+    tagColor: 'blue',
   };
 };
 
