@@ -9,7 +9,7 @@ export const auditClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 30000, // 30s timeout for scraping and AI processing
+  timeout: 60000, // 60s timeout for scraping and AI processing
 });
 
 export const auditApi = {
@@ -19,7 +19,7 @@ export const auditApi = {
       return response.data;
     } catch (error: any) {
       let errorMessage = 'Failed to analyze the website. Make sure the server is running and the URL is publicly accessible.';
-      
+
       if (error.response?.data?.message) {
         errorMessage = error.response.data.message;
       } else if (error.response?.data?.error) {
@@ -27,19 +27,19 @@ export const auditApi = {
       } else if (error.message) {
         errorMessage = error.message;
       }
-      
-      // Notify users through Ant Design's popup notification as requested
+
+      // Notify users through popup
       notification.error({
         message: 'Analysis Failed',
         description: errorMessage,
         placement: 'topRight',
         duration: 5,
       });
-      
+
       throw new Error(errorMessage);
     }
   },
-  
+
   checkHealth: async (): Promise<boolean> => {
     try {
       const response = await auditClient.get<{ status: string }>('/health');

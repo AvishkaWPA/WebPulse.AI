@@ -13,7 +13,7 @@ import java.net.UnknownHostException;
 @Slf4j
 public class ScraperService {
     private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 WebPulseAI/1.0";
-    private static final int TIMEOUT_MS = 10000;
+    private static final int TIMEOUT_MS = 30000;
 
     public Document fetchWebpage(String urlString) {
         log.info("Starting audit fetch for URL: {}", urlString);
