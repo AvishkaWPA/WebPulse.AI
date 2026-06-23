@@ -1,0 +1,16 @@
+# Maven Build Output
+backend/target/
+
+# Node / Vite Frontend Build & Dependencies
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+
+# Local Env / Logs
+*.log
+.env*.local
+
+# IDEs & System files
+.idea/
+.vscode/
+.DS_Store
