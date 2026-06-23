@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --color-brand-primary: #6C63FF;
+  --color-brand-secondary: #8B7CFF;
+  --color-brand-accent: #4F8CFF;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-neutral-bg: #F8F9FC;
+  --color-card-bg: #FFFFFF;
+  --color-border-gray: #E5E7EB;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+
+  --shadow-soft: 0 4px 10px rgba(108, 99, 255, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-neutral-bg);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom styles for Ant Design overrides to match brand guidelines */
+.ant-btn-primary {
+  background: linear-gradient(135deg, #6C63FF 0%, #8B7CFF 100%) !important;
+  border-color: #6C63FF !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 500 !important;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #8B7CFF 0%, #6C63FF 100%) !important;
+  border-color: #8B7CFF !important;
+}
+
+.ant-card {
+  border-radius: 12px !important;
+  border-color: #E5E7EB !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Typography styles based on brandGuidelines */
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+}
