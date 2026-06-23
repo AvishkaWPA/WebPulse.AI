@@ -1,6 +1,155 @@
-# WebPulse.AI — System Architecture
+# WebPulse.AI
+
+An AI-powered website auditing platform that analyzes publicly accessible webpages and provides factual metrics, AI-generated insights, and actionable recommendations to improve SEO, content quality, and user experience.
+
+**Live Demo:** [https://webpulse-frontend-production.up.railway.app](https://webpulse-frontend-production.up.railway.app/)
 
 ---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Setup Instructions](#setup-instructions)
+- [System Architecture](#1-high-level-system-architecture)
+- [AI Design Decisions](#3-ai-design-decisions)
+- [Trade-offs](#4-trade-offs)
+- [Future Improvements](#5-future-improvements)
+
+---
+
+## Project Overview
+
+WebPulse AI takes a URL as input, scrapes the webpage, extracts quantitative metrics, generates qualitative AI insights using Gemini 2.5 Flash, and calculates a deterministic quality score — all presented through a modern React dashboard.
+
+### What It Does
+
+1. **Accepts a URL** — User enters any publicly accessible webpage URL
+2. **Scrapes the page** — Backend fetches and parses the HTML using Jsoup
+3. **Extracts metrics** — Word count, headings, links, images, meta tags, CTAs, reading time, text-to-HTML ratio
+4. **Generates AI insights** — Gemini 2.5 Flash analyzes SEO structure, messaging clarity, CTA usage, content depth, and UX concerns
+5. **Calculates scores** — Deterministic rule-based scoring across SEO, Content, UX, and Best Practices categories
+6. **Returns recommendations** — Prioritized, actionable suggestions based on the analysis
+
+### Technology Stack
+
+| Layer | Technology |
+|-------|-----------|
+| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, Ant Design, Axios |
+| **Backend** | Java 17, Spring Boot 3.3, Spring AI, Jsoup, Lombok, Spring Validation |
+| **AI Model** | Gemini 2.5 Flash (via Spring AI) |
+
+### Project Structure
+
+```
+WebPulse.AI/
+├── backend/                        # Spring Boot backend
+│   └── src/main/java/ai/webpulse/
+│       ├── controller/             # REST API endpoints
+│       ├── service/                # Business logic
+│       ├── dto/                    # Request/Response objects
+│       ├── config/                 # CORS & web configuration
+│       ├── exception/              # Global error handling
+│       └── util/                   # Metrics extraction
+├── frontend/                       # React frontend
+│   └── src/
+│       ├── components/             # UI components
+│       ├── pages/                  # Page-level views
+│       ├── layouts/                # App layout (header/footer)
+│       ├── services/               # API client (Axios)
+│       ├── theme/                  # Design tokens & Ant Design config
+│       ├── types/                  # TypeScript type definitions
+│       └── utils/                  # Helper utilities
+├── docs/                           # Documentation & diagrams
+└── prompt-logs/                    # AI prompt templates & samples
+```
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+
+| Tool | Version | Purpose |
+|------|---------|---------|
+| Java | 17+ | Backend runtime |
+| Maven | 3.8+ | Backend build tool |
+| Node.js | 18+ | Frontend runtime |
+| npm | 9+ | Frontend package manager |
+| Gemini API Key | — | AI analysis (get from [Google AI Studio](https://aistudio.google.com/apikey)) |
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/WebPulse.AI.git
+cd WebPulse.AI
+```
+
+### 2. Backend Setup
+
+```bash
+cd backend
+
+# Set your Gemini API key as an environment variable
+# Windows (PowerShell):
+$env:GEMINI_API_KEY="your-api-key-here"
+
+# macOS/Linux:
+export GEMINI_API_KEY=your-api-key-here
+
+# Build and run
+./mvnw spring-boot:run
+```
+
+The backend will start on **http://localhost:8080**
+
+Verify it's running:
+```bash
+curl http://localhost:8080/api/v1/health
+```
+
+Expected response:
+```json
+{"status": "UP", "message": "WebPulse AI Audit Platform is active"}
+```
+
+### 3. Frontend Setup
+
+```bash
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The frontend will start on **http://localhost:5173**
+
+### 4. Use the Application
+
+1. Open **http://localhost:5173** in your browser
+2. Enter a publicly accessible URL (e.g. `https://example.com`)
+3. Click **Analyze**
+4. View the results: scores, metrics, AI insights, and recommendations
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/api/v1/health` | Health check |
+| `POST` | `/api/v1/audits` | Run website audit |
+
+**Audit request body:**
+```json
+{
+  "url": "https://example.com"
+}
+```
+
+---
+
+## System Architecture
 
 ## 1. High-Level System Architecture
 
