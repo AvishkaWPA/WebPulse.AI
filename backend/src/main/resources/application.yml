@@ -25,4 +25,4 @@ app:
       - http://127.0.0.1:5173
       - http://localhost:*
       - http://127.0.0.1:*
-      - https://webpulse-frontend.up.railway.app
+      - https://webpulse-frontend-production.up.railway.app
