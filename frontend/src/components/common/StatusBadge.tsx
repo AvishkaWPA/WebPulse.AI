@@ -10,17 +10,17 @@ interface StatusBadgeProps {
 export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, className = '' }) => {
   const norm = (status || '').toString().toLowerCase().trim();
   
-  let bgClass = 'bg-gray-100 text-gray-600 border-gray-200';
+  let bgClass = 'bg-neutral-bg text-text-secondary border-border-gray/50';
   let text = status;
 
   if (norm === 'good' || norm === 'success' || norm === 'present') {
-    bgClass = 'bg-[#22C55E12] text-[#22C55E] border-[#22C55E24]';
+    bgClass = 'bg-success-light text-success border-success/15';
     text = 'Good';
   } else if (norm === 'average' || norm === 'warning' || norm === 'needs improvement') {
-    bgClass = 'bg-[#F59E0B12] text-[#F59E0B] border-[#F59E0B24]';
+    bgClass = 'bg-warning-light text-warning border-warning/15';
     text = 'Average';
   } else if (norm === 'poor' || norm === 'danger' || norm === 'error' || norm === 'missing') {
-    bgClass = 'bg-[#EF444412] text-[#EF4444] border-[#EF444424]';
+    bgClass = 'bg-danger-light text-danger border-danger/15';
     text = 'Poor';
   }
 

@@ -39,8 +39,8 @@ export const AiInsights: React.FC<AiInsightsProps> = ({ insights, score, ctaCoun
       content: insights.seoStructure,
       status: seoStatus,
       icon: <SearchOutlined />,
-      iconBgColor: 'bg-[#6C63FF12]',
-      iconColor: 'text-[#6C63FF]',
+      iconBgColor: 'bg-primary-light',
+      iconColor: 'text-primary',
     },
     {
       title: 'Messaging Clarity',
@@ -48,8 +48,8 @@ export const AiInsights: React.FC<AiInsightsProps> = ({ insights, score, ctaCoun
       content: insights.messagingClarity,
       status: messagingStatus,
       icon: <MessageOutlined />,
-      iconBgColor: 'bg-[#4F8CFF12]',
-      iconColor: 'text-[#4F8CFF]',
+      iconBgColor: 'bg-accent-light',
+      iconColor: 'text-accent',
     },
     {
       title: 'CTA Usage',
@@ -57,8 +57,8 @@ export const AiInsights: React.FC<AiInsightsProps> = ({ insights, score, ctaCoun
       content: insights.ctaUsage,
       status: ctaStatus,
       icon: <ThunderboltOutlined />,
-      iconBgColor: 'bg-[#EF444412]',
-      iconColor: 'text-[#EF4444]',
+      iconBgColor: 'bg-danger-light',
+      iconColor: 'text-danger',
     },
     {
       title: 'Content Depth',
@@ -66,8 +66,8 @@ export const AiInsights: React.FC<AiInsightsProps> = ({ insights, score, ctaCoun
       content: insights.contentDepth,
       status: contentStatus,
       icon: <ReadOutlined />,
-      iconBgColor: 'bg-[#22C55E12]',
-      iconColor: 'text-[#22C55E]',
+      iconBgColor: 'bg-success-light',
+      iconColor: 'text-success',
     },
     {
       title: 'UX Concerns',
@@ -75,14 +75,14 @@ export const AiInsights: React.FC<AiInsightsProps> = ({ insights, score, ctaCoun
       content: insights.uxConcerns,
       status: uxStatus,
       icon: <DesktopOutlined />,
-      iconBgColor: 'bg-[#F59E0B12]',
-      iconColor: 'text-[#F59E0B]',
+      iconBgColor: 'bg-warning-light',
+      iconColor: 'text-warning',
     },
   ];
 
   return (
     <Card
-      className="bg-white border border-[#E5E7EB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] p-6 md:p-8 text-left"
+      className="bg-card-bg border border-border-gray rounded-2xl shadow-card p-6 md:p-8 text-left"
     >
       <SectionHeader
         title="AI Insights"
@@ -99,7 +99,7 @@ export const AiInsights: React.FC<AiInsightsProps> = ({ insights, score, ctaCoun
         {insightItems.map((item, idx) => (
           <Collapse.Panel
             key={idx}
-            className="bg-white border border-[#E5E7EB] rounded-xl hover:shadow-[0_4px_12px_rgba(0,0,0,0.03)] transition-all overflow-hidden"
+            className="bg-card-bg border border-border-gray rounded-xl hover:shadow-soft/60 transition-all overflow-hidden"
             header={
               <div className="flex items-center justify-between w-full pr-2 select-none">
                 <div className="flex items-center space-x-3.5">

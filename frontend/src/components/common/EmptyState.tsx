@@ -5,10 +5,10 @@ import { SearchOutlined } from '@ant-design/icons';
 export const EmptyState: React.FC = () => {
   return (
     <Card 
-      className="bg-white border border-[#E5E7EB] rounded-2xl p-8 w-full text-center shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+      className="bg-card-bg border border-border-gray rounded-2xl p-8 w-full text-center shadow-card"
       bodyStyle={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 20px' }}
     >
-      <div className="w-16 h-16 rounded-full bg-[#6C63FF10] flex items-center justify-center text-brand-primary mb-6">
+      <div className="w-16 h-16 rounded-full bg-primary-light flex items-center justify-center text-primary mb-6">
         <SearchOutlined className="text-3xl" />
       </div>
       <h3 className="text-xl font-bold text-text-primary mb-2 m-0 tracking-tight">

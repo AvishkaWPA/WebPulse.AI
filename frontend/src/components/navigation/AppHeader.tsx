@@ -11,7 +11,7 @@ export const AppHeader: React.FC = () => {
   };
 
   return (
-    <Header className="!bg-white border-b border-[#E5E7EB] px-4 md:px-8 h-16 flex items-center justify-between sticky top-0 z-50 shadow-[0_2px_8px_rgba(0,0,0,0.01)] max-w-[1440px] w-full mx-auto">
+    <Header className="!bg-card-bg border-b border-border-gray px-4 md:px-8 h-16 flex items-center justify-between sticky top-0 z-50 shadow-[0_2px_8px_rgba(0,0,0,0.01)] max-w-[1440px] w-full mx-auto">
 
       <Logo onClick={handleReload} />
 

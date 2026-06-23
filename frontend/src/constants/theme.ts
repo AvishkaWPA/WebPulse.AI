@@ -1,33 +1,34 @@
 export const THEME = {
   colors: {
-    primary: '#6C63FF',
-    secondary: '#8B7CFF',
-    accent: '#4F8CFF',
-    success: '#22C55E',
-    warning: '#F59E0B',
-    danger: '#EF4444',
-    bg: '#F8F9FC',
-    card: '#FFFFFF',
-    border: '#E5E7EB',
-    text: '#111827',
-    textSecondary: '#6B7280',
-    // Status light fills for badges/tags
-    successLight: 'rgba(34, 197, 94, 0.1)',
-    warningLight: 'rgba(245, 158, 11, 0.1)',
-    dangerLight: 'rgba(239, 68, 68, 0.1)',
-    primaryLight: 'rgba(108, 99, 255, 0.1)',
-    accentLight: 'rgba(79, 140, 255, 0.1)',
+    primary: 'var(--color-brand-primary)',
+    secondary: 'var(--color-brand-secondary)',
+    accent: 'var(--color-brand-accent)',
+    success: 'var(--color-success)',
+    warning: 'var(--color-warning)',
+    danger: 'var(--color-danger)',
+    bg: 'var(--color-neutral-bg)',
+    card: 'var(--color-card-bg)',
+    border: 'var(--color-border-gray)',
+    text: 'var(--color-text-primary)',
+    textSecondary: 'var(--color-text-secondary)',
+    
+    // Transparent status fills
+    primaryLight: 'var(--color-primary-light)',
+    accentLight: 'var(--color-accent-light)',
+    successLight: 'var(--color-success-light)',
+    warningLight: 'var(--color-warning-light)',
+    dangerLight: 'var(--color-danger-light)',
   },
   shadows: {
-    soft: '0 4px 10px rgba(108, 99, 255, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02)',
-    card: '0 4px 10px rgba(0, 0, 0, 0.02)',
+    soft: 'var(--shadow-soft)',
+    card: 'var(--shadow-card)',
   },
   borderRadius: {
-    lg: '12px',
-    md: '8px',
-    sm: '4px',
+    lg: 'var(--radius-lg)',
+    md: 'var(--radius-md)',
+    sm: 'var(--radius-sm)',
   },
   fonts: {
-    sans: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+    sans: 'var(--font-sans)',
   }
 };

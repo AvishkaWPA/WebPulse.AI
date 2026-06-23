@@ -71,7 +71,7 @@ export const DashboardPage: React.FC = () => {
   return (
     <div className="max-w-[1440px] w-full mx-auto px-4 md:px-8 py-8 flex-grow flex flex-col space-y-8">
       <Card 
-        className="bg-white border border-[#E5E7EB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] p-6 md:p-8"
+        className="bg-card-bg border border-border-gray rounded-2xl shadow-card p-6 md:p-8"
       >
         <Row gutter={[32, 32]} align="middle" className="flex-col-reverse md:flex-row">
           <Col xs={24} md={14} className="text-left">
@@ -81,12 +81,12 @@ export const DashboardPage: React.FC = () => {
             <p className="text-sm md:text-base text-text-secondary leading-relaxed max-w-xl mb-8 font-medium">
               Enter a URL below to run a comprehensive website audit. Receive factual website metrics, deterministic score overview, AI insights, and prioritized recommendations.
             </p>
-
-            <div className="max-w-2xl bg-white p-1 rounded-2xl border border-border-gray shadow-soft flex items-center pr-2 focus-within:border-brand-primary transition-all">
+ 
+            <div className="max-w-2xl bg-card-bg p-1 rounded-2xl border border-border-gray shadow-soft flex items-center pr-2 focus-within:border-brand-primary transition-all">
               <Input
                 size="large"
                 placeholder="Enter website URL (e.g. https://example.com)"
-                prefix={<GlobalOutlined className="text-[#6B7280] mr-2" />}
+                prefix={<GlobalOutlined className="text-text-secondary mr-2" />}
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 disabled={isLoading}

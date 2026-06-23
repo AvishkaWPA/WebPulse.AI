@@ -7,7 +7,7 @@ const { Footer } = Layout;
 
 export const AppFooter: React.FC = () => {
   return (
-    <Footer className="bg-white border-t border-[#E5E7EB] py-8 text-sm text-text-secondary w-full mt-auto">
+    <Footer className="bg-card-bg border-t border-border-gray py-8 text-sm text-text-secondary w-full mt-auto">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         <Logo compact />
 

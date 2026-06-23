@@ -10,6 +10,9 @@ export const antdTheme = {
     colorError: THEME.colors.danger,
     colorBgContainer: THEME.colors.card,
     colorBgLayout: THEME.colors.bg,
+    colorText: THEME.colors.text,
+    colorTextSecondary: THEME.colors.textSecondary,
+    colorBorder: THEME.colors.border,
   },
   components: {
     Button: {
@@ -20,12 +23,14 @@ export const antdTheme = {
     Input: {
       controlHeightLG: 48,
       borderRadiusLG: 12,
+      colorBorder: THEME.colors.border,
     },
     Card: {
       borderRadiusLG: 12,
+      colorBorderBg: THEME.colors.border,
     },
     Progress: {
-      remainingColor: '#F3F4F6',
+      remainingColor: 'var(--color-border-gray)',
     }
   }
 };

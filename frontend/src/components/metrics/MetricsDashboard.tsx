@@ -98,7 +98,7 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
 
   return (
     <Card 
-      className="bg-white border border-[#E5E7EB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] p-6 md:p-8 text-left"
+      className="bg-card-bg border border-border-gray rounded-2xl shadow-card p-6 md:p-8 text-left"
     >
 
       <SectionHeader 
@@ -112,8 +112,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="Word Count"
           value={metrics.wordCount.toLocaleString()}
           icon={<FileTextOutlined />}
-          iconBgColor="bg-[#22C55E12]"
-          iconColor="text-[#22C55E]"
+          iconBgColor="bg-success-light"
+          iconColor="text-success"
           tooltip="Total words extracted from the visible webpage text."
           status={getWordCountStatus(metrics.wordCount)}
         />
@@ -122,8 +122,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="Images Count"
           value={metrics.imageCount}
           icon={<PictureOutlined />}
-          iconBgColor="bg-[#6C63FF12]"
-          iconColor="text-[#6C63FF]"
+          iconBgColor="bg-primary-light"
+          iconColor="text-primary"
           tooltip="Total image tags found on the webpage."
           status={metrics.imageCount > 0 ? 'Good' : 'Average'}
         />
@@ -132,8 +132,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="Internal Links"
           value={metrics.internalLinks}
           icon={<LinkOutlined />}
-          iconBgColor="bg-[#F59E0B12]"
-          iconColor="text-[#F59E0B]"
+          iconBgColor="bg-warning-light"
+          iconColor="text-warning"
           tooltip="Links pointing to the same website domain."
           status={getInternalLinksStatus(metrics.internalLinks)}
         />
@@ -142,8 +142,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="External Links"
           value={metrics.externalLinks}
           icon={<GlobalOutlined />}
-          iconBgColor="bg-[#EF444412]"
-          iconColor="text-[#EF4444]"
+          iconBgColor="bg-danger-light"
+          iconColor="text-danger"
           tooltip="Links pointing to external domains."
           status={getExternalLinksStatus(metrics.externalLinks)}
         />
@@ -152,8 +152,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="H1 Count"
           value={metrics.h1Count}
           icon={<FontSizeOutlined />}
-          iconBgColor="bg-[#22C55E12]"
-          iconColor="text-[#22C55E]"
+          iconBgColor="bg-success-light"
+          iconColor="text-success"
           tooltip="Number of Heading 1 tags. Best practices suggest exactly one."
           status={getH1CountStatus(metrics.h1Count)}
         />
@@ -162,8 +162,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="H2 Count"
           value={metrics.h2Count}
           icon={<FontSizeOutlined />}
-          iconBgColor="bg-[#22C55E12]"
-          iconColor="text-[#22C55E]"
+          iconBgColor="bg-success-light"
+          iconColor="text-success"
           tooltip="Number of Heading 2 tags."
           status={getHeadingStatus(metrics.h2Count)}
         />
@@ -172,8 +172,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="H3 Count"
           value={metrics.h3Count}
           icon={<FontSizeOutlined />}
-          iconBgColor="bg-[#F59E0B12]"
-          iconColor="text-[#F59E0B]"
+          iconBgColor="bg-warning-light"
+          iconColor="text-warning"
           tooltip="Number of Heading 3 tags."
           status={getHeadingStatus(metrics.h3Count)}
         />
@@ -182,8 +182,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="Alt Text Coverage"
           value={`${altCoverage}%`}
           icon={<PictureOutlined />}
-          iconBgColor="bg-[#F59E0B12]"
-          iconColor="text-[#F59E0B]"
+          iconBgColor="bg-warning-light"
+          iconColor="text-warning"
           tooltip="Percentage of images that contain alt text attributes."
           status={getAltCoverageStatus(altCoverage)}
         />
@@ -192,8 +192,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="CTA Count"
           value={metrics.ctaCount}
           icon={<BulbOutlined />}
-          iconBgColor="bg-[#F59E0B12]"
-          iconColor="text-[#F59E0B]"
+          iconBgColor="bg-warning-light"
+          iconColor="text-warning"
           tooltip="Estimated count of call-to-action buttons or high-intent links."
           status={getCtaStatus(metrics.ctaCount)}
         />
@@ -202,8 +202,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="Reading Time"
           value={`${metrics.readingTime} min`}
           icon={<ClockCircleOutlined />}
-          iconBgColor="bg-[#6C63FF12]"
-          iconColor="text-[#6C63FF]"
+          iconBgColor="bg-primary-light"
+          iconColor="text-primary"
           tooltip="Estimated reading duration for the page content."
           status="approx."
           isStatusPill={false}
@@ -213,8 +213,8 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="Content Length"
           value={metrics.wordCount.toLocaleString()}
           icon={<FileTextOutlined />}
-          iconBgColor="bg-[#6C63FF12]"
-          iconColor="text-[#6C63FF]"
+          iconBgColor="bg-primary-light"
+          iconColor="text-primary"
           tooltip="Text body word details."
           status="words"
           isStatusPill={false}
@@ -224,15 +224,15 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
           title="Text To HTML Ratio"
           value={`${Math.round(metrics.textToHtmlRatio)}%`}
           icon={<PercentageOutlined />}
-          iconBgColor="bg-[#F59E0B12]"
-          iconColor="text-[#F59E0B]"
+          iconBgColor="bg-warning-light"
+          iconColor="text-warning"
           tooltip="Text density compared to total HTML markup size."
           status={getRatioStatus(metrics.textToHtmlRatio)}
         />
       </div>
 
       <Card 
-        className="!mt-6 bg-[#F8F9FC]/40 border border-[#E5E7EB] rounded-2xl p-6"
+        className="!mt-6 bg-neutral-bg/40 border border-border-gray rounded-2xl p-6"
       >
         <div className="flex flex-col gap-12 md:flex-row md:gap-6">
           <div>
@@ -249,7 +249,7 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
                 {metaTitleLength} characters
               </span>
             </div>
-            <div className="p-4 bg-white rounded-xl border border-[#E5E7EB] text-sm text-text-primary font-mono select-all break-words leading-relaxed">
+            <div className="p-4 bg-card-bg rounded-xl border border-border-gray text-sm text-text-primary font-mono select-all break-words leading-relaxed">
               {metrics.metaTitle || <span className="text-danger italic font-sans font-normal">No title element detected in document header.</span>}
             </div>
             <div className="mt-2 text-xs font-semibold text-text-secondary">
@@ -271,7 +271,7 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
                 {metaDescLength} characters
               </span>
             </div>
-            <div className="p-4 bg-white rounded-xl border border-[#E5E7EB] text-sm text-text-primary font-mono select-all break-words leading-relaxed">
+            <div className="p-4 bg-card-bg rounded-xl border border-border-gray text-sm text-text-primary font-mono select-all break-words leading-relaxed">
               {metrics.metaDescription || <span className="text-danger italic font-sans font-normal">No description meta tag detected in document header.</span>}
             </div>
             <div className="mt-2 text-xs font-semibold text-text-secondary">

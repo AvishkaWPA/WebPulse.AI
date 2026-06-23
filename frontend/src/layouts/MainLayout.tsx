@@ -11,7 +11,7 @@ interface MainLayoutProps {
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <Layout className="min-h-screen bg-[#F8F9FC] font-sans flex flex-col">
+    <Layout className="min-h-screen bg-neutral-bg font-sans flex flex-col">
       <AppHeader />
       <Content className="flex-grow flex flex-col">
         {children}

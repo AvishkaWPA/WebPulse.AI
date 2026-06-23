@@ -18,15 +18,15 @@ export const MetricCard: React.FC<MetricCardProps> = ({
   title,
   value,
   icon,
-  iconBgColor = 'bg-[#6C63FF12]',
-  iconColor = 'text-[#6C63FF]',
+  iconBgColor = 'bg-primary-light',
+  iconColor = 'text-primary',
   tooltip,
   status,
   isStatusPill = true,
 }) => {
   return (
     <Card
-      className="bg-white border border-[#E5E7EB] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04)] transition-all duration-300 rounded-xl flex flex-col h-full justify-between"
+      className="bg-card-bg border border-border-gray hover:shadow-card transition-all duration-300 rounded-xl flex flex-col h-full justify-between"
       bodyStyle={{ padding: '20px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}
     >
       {/* Top Section: Icon, Title & Tooltip */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Progress, Row, Col } from 'antd';
+import { THEME } from '../../constants/theme';
 import type { Score } from '../../types/audit';
 import { SectionHeader } from '../common/SectionHeader';
 import { StatusBadge } from '../common/StatusBadge';
@@ -21,7 +22,7 @@ export const ScoreOverview: React.FC<ScoreOverviewProps> = ({ score }) => {
 
   return (
     <Card
-      className="bg-white border border-[#E5E7EB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] p-6 md:p-8 text-left"
+      className="bg-card-bg border border-border-gray rounded-2xl shadow-card p-6 md:p-8 text-left"
     >
       <SectionHeader
         title="Score Overview"
@@ -29,7 +30,7 @@ export const ScoreOverview: React.FC<ScoreOverviewProps> = ({ score }) => {
         className="mb-8"
       />
 
-      <div className="flex flex-col items-center justify-center pt-4 pb-8 border-b border-[#E5E7EB]/70 w-full">
+      <div className="flex flex-col items-center justify-center pt-4 pb-8 border-b border-border-gray/70 w-full">
         <div className="relative flex items-center justify-center">
           <Progress
             type="dashboard"
@@ -37,8 +38,8 @@ export const ScoreOverview: React.FC<ScoreOverviewProps> = ({ score }) => {
             percent={score.overall}
             strokeWidth={8}
             strokeColor={{
-              '0%': '#6C63FF',
-              '100%': '#8B7CFF',
+              '0%': THEME.colors.primary,
+              '100%': THEME.colors.secondary,
             }}
             width={180}
             format={(percent) => (
@@ -65,11 +66,11 @@ export const ScoreOverview: React.FC<ScoreOverviewProps> = ({ score }) => {
             const catStatus = getScoreStatus(cat.value);
             return (
               <Col xs={24} sm={12} md={6} key={idx} className="text-center">
-                <div className="flex flex-col items-center space-y-2 border-r border-[#E5E7EB]/40 last:border-r-0 md:h-20 justify-center">
+                <div className="flex flex-col items-center space-y-2 border-r border-border-gray/40 last:border-r-0 md:h-20 justify-center">
                   <span className="text-sm font-bold text-text-primary tracking-tight">
                     {cat.label}
                   </span>
-                  <span className="text-xs font-semibold text-text-secondary bg-neutral-bg px-2.5 py-0.5 rounded border border-[#E5E7EB]">
+                  <span className="text-xs font-semibold text-text-secondary bg-neutral-bg px-2.5 py-0.5 rounded border border-border-gray">
                     {cat.value}/100
                   </span>
                   <StatusBadge status={catStatus} className="px-3.5 py-0.5 text-[10px]" />

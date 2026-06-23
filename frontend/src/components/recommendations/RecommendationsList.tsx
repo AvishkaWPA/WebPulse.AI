@@ -12,7 +12,7 @@ interface RecommendationsListProps {
 export const RecommendationsList: React.FC<RecommendationsListProps> = ({ recommendations }) => {
   return (
     <Card
-      className="bg-white border border-[#E5E7EB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] p-6 md:p-8 text-left"
+      className="bg-card-bg border border-border-gray rounded-2xl shadow-card p-6 md:p-8 text-left"
     >
       {/* Section Header */}
       <SectionHeader
@@ -24,7 +24,7 @@ export const RecommendationsList: React.FC<RecommendationsListProps> = ({ recomm
       <div className="space-y-4">
         {recommendations.length === 0 ? (
           <div className="text-center py-12 flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full bg-[#22C55E10] text-[#22C55E] flex items-center justify-center mb-4">
+            <div className="w-12 h-12 rounded-full bg-success-light text-success flex items-center justify-center mb-4">
               <CheckCircleOutlined className="text-2xl" />
             </div>
             <h4 className="font-bold text-text-primary text-lg m-0">All Clear!</h4>
@@ -46,11 +46,11 @@ export const RecommendationsList: React.FC<RecommendationsListProps> = ({ recomm
               return (
                 <Collapse.Panel
                   key={index}
-                  className="bg-white border border-[#E5E7EB] rounded-xl hover:shadow-[0_4px_12px_rgba(0,0,0,0.03)] transition-all overflow-hidden"
+                  className="bg-card-bg border border-border-gray rounded-xl hover:shadow-soft/60 transition-all overflow-hidden"
                   header={
                     <div className="flex items-center justify-between w-full pr-2 select-none">
                       <div className="flex items-center space-x-3.5 flex-grow min-w-0">
-                        <div className="w-8 h-8 rounded-lg bg-[#6C63FF10] text-brand-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
+                        <div className="w-8 h-8 rounded-lg bg-primary-light text-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
                           {num}
                         </div>
                         <div className="text-left min-w-0 flex-grow pr-4">
@@ -78,11 +78,11 @@ export const RecommendationsList: React.FC<RecommendationsListProps> = ({ recomm
                       <p className="m-0 text-xs md:text-sm">{rec.description}</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3 border-t border-[#E5E7EB]/50 mt-3 text-xs md:text-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3 border-t border-border-gray/50 mt-3 text-xs md:text-sm">
                       <div>
                         <span className="font-extrabold text-text-primary block mb-1">Impacted Metric:</span>
                         <div className="flex flex-wrap gap-2 items-center">
-                          <span className="bg-neutral-bg px-2.5 py-0.5 rounded font-mono border border-border-gray/70 text-text-primary text-[10.5px]">
+                          <span className="bg-neutral-bg px-2.5 py-0.5 rounded font-mono border border-border-gray/50 text-text-primary text-[10.5px]">
                             {rec.metricImpacted}
                           </span>
                           <Tag color={getCategoryColor(rec.category)} className="uppercase font-bold text-[9px] tracking-wider rounded border-none shadow-none">
