@@ -19,7 +19,7 @@ interface AiInsightsProps {
 }
 
 export const AiInsights: React.FC<AiInsightsProps> = ({ insights, score, ctaCount }) => {
-  // Determine CTA usage status dynamically based on ctaCount
+
   const getCtaStatus = (count: number): 'Good' | 'Average' | 'Poor' => {
     if (count >= 4) return 'Good';
     if (count >= 2) return 'Average';
@@ -30,7 +30,7 @@ export const AiInsights: React.FC<AiInsightsProps> = ({ insights, score, ctaCoun
   const contentStatus = getScoreStatus(score.content) as 'Good' | 'Average' | 'Poor';
   const uxStatus = getScoreStatus(score.ux) as 'Good' | 'Average' | 'Poor';
   const ctaStatus = getCtaStatus(ctaCount);
-  const messagingStatus = contentStatus; // Align messaging status with Content score status
+  const messagingStatus = contentStatus;
 
   const insightItems = [
     {
@@ -81,21 +81,18 @@ export const AiInsights: React.FC<AiInsightsProps> = ({ insights, score, ctaCoun
   ];
 
   return (
-    <Card 
+    <Card
       className="bg-white border border-[#E5E7EB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] p-6 md:p-8 text-left"
-      bodyStyle={{ padding: 0 }}
     >
-      {/* Section Header */}
-      <SectionHeader 
-        title="AI Insights" 
-        subtitle="AI-generated analysis of website content and structure." 
+      <SectionHeader
+        title="AI Insights"
+        subtitle="AI-generated analysis of website content and structure."
         className="mb-8"
       />
 
-      {/* Accordion Stack using Ant Design Collapse */}
-      <Collapse 
-        accordion 
-        ghost 
+      <Collapse
+        accordion
+        ghost
         expandIconPosition="end"
         className="bg-transparent border-none space-y-3"
       >

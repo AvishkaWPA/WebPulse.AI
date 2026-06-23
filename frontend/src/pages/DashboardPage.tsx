@@ -138,34 +138,67 @@ export const DashboardPage: React.FC = () => {
       </Card>
 
       <div className="w-full flex-grow">
-        {isLoading && (
-          <div className="space-y-12">
-            <Card className="rounded-2xl border border-border-gray p-8 flex flex-col items-center">
-              <Skeleton.Avatar active size={160} shape="circle" className="mb-4" />
-              <Skeleton.Button active size="small" shape="round" className="mb-8 w-24" />
-              <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-6">
-                {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="flex flex-col items-center space-y-2">
-                    <Skeleton.Button active size="small" className="w-16" />
-                    <Skeleton.Button active size="small" shape="round" className="w-12" />
+      {isLoading && (
+        <div className="space-y-8 animate-fadeIn mt-8">
+          <Card className="rounded-2xl border border-border-gray p-8">
+            <div className="max-w-4xl mx-auto flex flex-col items-center">
+              <Skeleton.Avatar active size={120} shape="circle"/>
+              <div className="mt-4">
+                <Skeleton.Button active shape="round" style={{ width: 120 }}/>
+              </div>
+              <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-8 mt-10">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="flex flex-col items-center">
+                    <Skeleton.Input active size="small"
+                      style={{
+                        width: 70,
+                        marginBottom: 12,
+                      }}
+                    />
+                    <Skeleton.Button active shape="round"
+                      style={{
+                        width: 50,
+                      }}
+                    />
                   </div>
                 ))}
               </div>
-            </Card>
+            </div>
+          </Card>
 
-            <div>
-              <Skeleton.Input active size="large" className="w-48 mb-6" />
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {Array.from({ length: 10 }).map((_, i) => (
-                  <Card key={i} className="rounded-xl border border-border-gray p-4 h-[120px]">
-                    <Skeleton.Input active size="small" className="w-20 mb-3" />
-                    <Skeleton.Input active size="large" className="w-14" />
-                  </Card>
-                ))}
-              </div>
+          {/* Metrics Dashboard Skeleton */}
+          <div>
+            <Skeleton.Input
+              active
+              size="large"
+              style={{
+                width: 200,
+                marginBottom: 24,
+                marginTop: 16,
+              }}
+            />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {Array.from({ length: 10 }).map((_, i) => (
+                <Card key={i} className="rounded-xl border border-border-gray ">
+                    <div className="h-[100px] flex flex-col justify-center ">
+                    <Skeleton.Input active size="small"
+                      style={{
+                        width: 80,
+                        marginBottom: 16,
+                      }}                  
+                    />
+                    <Skeleton.Input active size="large"
+                      style={{
+                        width: 100,
+                      }}
+                    />
+                  </div>
+                </Card>
+              ))}
             </div>
           </div>
-        )}
+        </div>
+      )}
 
         {/* Empty/Ready State */}
         {!isLoading && !result && (
@@ -174,22 +207,18 @@ export const DashboardPage: React.FC = () => {
           </div>
         )}
 
-        {/* Completed Audit Results */}
+        {/* Results State */}
         {!isLoading && result && (
-          <div className="space-y-12 animate-fadeIn">
-            {/* 2. Score Overview */}
+            <div className="flex flex-col gap-8 animate-fadeIn mt-8">
+
             <ScoreOverview score={result.score} />
 
-            {/* 3. Factual Metrics */}
             <MetricsDashboard metrics={result.metrics} responseTime={responseTime} />
 
-            {/* 4. AI Insights */}
             <AiInsights insights={result.insights} score={result.score} ctaCount={result.metrics.ctaCount} />
 
-            {/* 5. Recommendations */}
             <RecommendationsList recommendations={result.recommendations} />
 
-            {/* Bottom New Analysis CTA */}
             <div className="flex justify-center pt-8">
               <Button
                 type="default"

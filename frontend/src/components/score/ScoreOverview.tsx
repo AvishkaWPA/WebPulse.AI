@@ -20,18 +20,15 @@ export const ScoreOverview: React.FC<ScoreOverviewProps> = ({ score }) => {
   ];
 
   return (
-    <Card 
+    <Card
       className="bg-white border border-[#E5E7EB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] p-6 md:p-8 text-left"
-      bodyStyle={{ padding: 0 }}
     >
-      {/* Section Header (Inside Parent Card as specified) */}
-      <SectionHeader 
-        title="Score Overview" 
-        subtitle="Overall website quality assessment." 
+      <SectionHeader
+        title="Score Overview"
+        subtitle="Overall website quality assessment."
         className="mb-8"
       />
 
-      {/* Main Content Dial Section */}
       <div className="flex flex-col items-center justify-center pt-4 pb-8 border-b border-[#E5E7EB]/70 w-full">
         <div className="relative flex items-center justify-center">
           <Progress
@@ -56,13 +53,12 @@ export const ScoreOverview: React.FC<ScoreOverviewProps> = ({ score }) => {
             )}
           />
         </div>
-        
+
         <div className="mt-4">
           <StatusBadge status={overallStatus} className="px-5 py-1.5 text-sm uppercase tracking-wider animate-fadeIn" />
         </div>
       </div>
 
-      {/* Category Breakdown (Grid: 4-col desktop, 2-col tablet, 1-col mobile) */}
       <div className="w-full pt-8 px-2">
         <Row gutter={[16, 24]} className="justify-center">
           {categories.map((cat, idx) => {

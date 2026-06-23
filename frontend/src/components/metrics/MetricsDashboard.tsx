@@ -99,16 +99,14 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
   return (
     <Card 
       className="bg-white border border-[#E5E7EB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] p-6 md:p-8 text-left"
-      bodyStyle={{ padding: 0 }}
     >
-      {/* Section Header */}
+
       <SectionHeader 
         title="Factual Metrics" 
         subtitle="Extracted from website structure." 
         className="mb-8"
       />
 
-      {/* Metrics Grid: 5-col desktop / 3-col tablet / 2-col mobile / 1-col small-mobile */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         <MetricCard
           title="Word Count"
@@ -233,13 +231,10 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
         />
       </div>
 
-      {/* Meta Information dedicated sub-card below metrics grid */}
       <Card 
-        className="mt-6 bg-[#F8F9FC]/40 border border-[#E5E7EB] rounded-2xl p-6"
-        bodyStyle={{ padding: 0 }}
+        className="!mt-6 bg-[#F8F9FC]/40 border border-[#E5E7EB] rounded-2xl p-6"
       >
-        <div className="space-y-6">
-          {/* Meta Title */}
+        <div className="flex flex-col gap-12 md:flex-row md:gap-6">
           <div>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center space-x-2 text-sm font-bold text-text-primary">
@@ -262,7 +257,6 @@ export const MetricsDashboard: React.FC<MetricsDashboardProps> = ({ metrics }) =
             </div>
           </div>
 
-          {/* Meta Description */}
           <div>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center space-x-2 text-sm font-bold text-text-primary">

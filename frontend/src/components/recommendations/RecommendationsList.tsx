@@ -11,14 +11,13 @@ interface RecommendationsListProps {
 
 export const RecommendationsList: React.FC<RecommendationsListProps> = ({ recommendations }) => {
   return (
-    <Card 
+    <Card
       className="bg-white border border-[#E5E7EB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] p-6 md:p-8 text-left"
-      bodyStyle={{ padding: 0 }}
     >
       {/* Section Header */}
-      <SectionHeader 
-        title="Recommendations" 
-        subtitle="Actionable improvements to increase website quality." 
+      <SectionHeader
+        title="Recommendations"
+        subtitle="Actionable improvements to increase website quality."
         className="mb-8"
       />
 
@@ -34,9 +33,9 @@ export const RecommendationsList: React.FC<RecommendationsListProps> = ({ recomm
             </p>
           </div>
         ) : (
-          <Collapse 
-            accordion 
-            ghost 
+          <Collapse
+            accordion
+            ghost
             expandIconPosition="end"
             className="bg-transparent border-none space-y-3"
           >
@@ -51,11 +50,9 @@ export const RecommendationsList: React.FC<RecommendationsListProps> = ({ recomm
                   header={
                     <div className="flex items-center justify-between w-full pr-2 select-none">
                       <div className="flex items-center space-x-3.5 flex-grow min-w-0">
-                        {/* Number block */}
                         <div className="w-8 h-8 rounded-lg bg-[#6C63FF10] text-brand-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
                           {num}
                         </div>
-                        {/* Title and summary */}
                         <div className="text-left min-w-0 flex-grow pr-4">
                           <h4 className="text-sm md:text-base font-bold text-text-primary m-0 tracking-tight leading-tight truncate">
                             {rec.title}
@@ -65,10 +62,9 @@ export const RecommendationsList: React.FC<RecommendationsListProps> = ({ recomm
                           </p>
                         </div>
                       </div>
-                      
-                      {/* Priority Tag */}
-                      <Tag 
-                        color={pStyle.tagColor} 
+
+                      <Tag
+                        color={pStyle.tagColor}
                         className="uppercase font-bold text-[10px] tracking-wider px-2.5 py-0.5 rounded border-none shadow-none font-sans mr-2"
                       >
                         {rec.priority}
@@ -76,13 +72,12 @@ export const RecommendationsList: React.FC<RecommendationsListProps> = ({ recomm
                     </div>
                   }
                 >
-                  {/* Expandable details body: why it matters, impacted metric, suggested improvement */}
                   <div className="px-1 py-2 text-sm leading-relaxed text-text-secondary font-medium space-y-4">
                     <div>
                       <span className="font-extrabold text-text-primary block mb-1">Why it matters:</span>
                       <p className="m-0 text-xs md:text-sm">{rec.description}</p>
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3 border-t border-[#E5E7EB]/50 mt-3 text-xs md:text-sm">
                       <div>
                         <span className="font-extrabold text-text-primary block mb-1">Impacted Metric:</span>
