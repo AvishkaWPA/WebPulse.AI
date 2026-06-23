@@ -1,6 +1,6 @@
 server:
-  port: 8080
-  address: 127.0.0.1
+  port: ${PORT:8080}
+  address: 0.0.0.0
 
 spring:
   ai:
@@ -25,3 +25,4 @@ app:
       - http://127.0.0.1:5173
       - http://localhost:*
       - http://127.0.0.1:*
+      - https://webpulse-frontend.up.railway.app
