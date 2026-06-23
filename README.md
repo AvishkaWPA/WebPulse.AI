@@ -113,7 +113,6 @@ sequenceDiagram
 
 ## 3. AI Design Decisions
 
-> *"Why did you use AI, where did you use AI, and what decisions did you make when integrating AI into your solution?"*
 
 ### 3.1 Why AI Was Used
 
