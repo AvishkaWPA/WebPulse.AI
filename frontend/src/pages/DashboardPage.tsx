@@ -167,7 +167,7 @@ export const DashboardPage: React.FC = () => {
           </Card>
 
           {/* Metrics Dashboard Skeleton */}
-          <div>
+          <div className="mt-4">
             <Skeleton.Input
               active
               size="large"
@@ -180,16 +180,16 @@ export const DashboardPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {Array.from({ length: 10 }).map((_, i) => (
                 <Card key={i} className="rounded-xl border border-border-gray ">
-                    <div className="h-[100px] flex flex-col justify-center ">
+                    <div className="h-[100px] flex flex-col justify-center overflow-hidden">
                     <Skeleton.Input active size="small"
                       style={{
-                        width: 80,
+                        width: 40,
                         marginBottom: 16,
                       }}                  
                     />
                     <Skeleton.Input active size="large"
                       style={{
-                        width: 100,
+                        width: 60,
                       }}
                     />
                   </div>
