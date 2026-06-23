@@ -57,12 +57,12 @@ export const RecommendationsList: React.FC<RecommendationsListProps> = ({ recomm
                           <h4 className="text-sm md:text-base font-bold text-text-primary m-0 tracking-tight leading-tight truncate">
                             {rec.title}
                           </h4>
-                          <p className="text-xs font-semibold text-text-secondary mt-1 mb-0 truncate hidden sm:block">
+                          <p className="text-xs font-semibold text-text-secondary mt-1 mb-0 truncate hidden">
                             {rec.description}
                           </p>
                         </div>
                       </div>
-
+                      
                       <Tag
                         color={pStyle.tagColor}
                         className="uppercase font-bold text-[10px] tracking-wider px-2.5 py-0.5 rounded border-none shadow-none font-sans mr-2"
