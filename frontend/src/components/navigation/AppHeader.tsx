@@ -15,7 +15,7 @@ export const AppHeader: React.FC = () => {
 
       <Logo onClick={handleReload} />
 
-      <div className="flex items-center">
+      <div className="flex items-center hidden sm:flex">
         <Button 
           type="primary" 
           size="middle" 
