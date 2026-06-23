@@ -1,0 +1,32 @@
+{
+  "insights": {
+    "seoStructure": "The heading hierarchy is clean with a single H1, followed by logical H2 and H3 elements. The meta title and description are well-formed and include key search phrases.",
+    "messagingClarity": "The primary value proposition in the H1 is clear, but could be enhanced with a more specific description of the product's unique value in the sub-headings.",
+    "ctaUsage": "The CTA density is somewhat low. For a 780-word page, 2 CTAs may not be sufficient to capture user intent at different scroll depths.",
+    "contentDepth": "The word count of 782 is solid for a SaaS landing page, providing enough detail on features, benefits, and pricing without being overwhelming.",
+    "uxConcerns": "A major UX issue is that 40% of the images (2 out of 5) are missing alt text, which impairs screen reader compatibility and image search engine indexability."
+  },
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "UX",
+      "title": "Add descriptive alt attributes to missing images",
+      "description": "Currently, 2 of your 5 images do not have an alt attribute. Update these image tags to provide brief, descriptive text summarizing the image contents for accessibility and SEO.",
+      "metricImpacted": "Missing Alt Percentage"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "UX",
+      "title": "Increase CTA density on landing page",
+      "description": "With only 2 CTAs on a 782-word page, users must scroll far to find conversion points. Add a secondary CTA in the middle section and one in the footer to capture user intent.",
+      "metricImpacted": "CTA Count"
+    },
+    {
+      "priority": "LOW",
+      "category": "SEO",
+      "title": "Incorporate target keywords into H2 headings",
+      "description": "The current H2 headings ('Why choose Acme SaaS?') are very generic. Rephrase them to include specific industry terms like 'collaborative project management' or 'agile workflow tracking' to rank better.",
+      "metricImpacted": "H2 Count"
+    }
+  ]
+}
